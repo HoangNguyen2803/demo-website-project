@@ -1,0 +1,100 @@
+/* Đặt lại một số kiểu mặc định cho trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Kiểu chung cho body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Container chứa toàn bộ nội dung */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề chính */
+header h1 {
+    font-size: 2.5rem;
+    color: #007bff;
+}
+
+/* Các phần (sections) */
+.section {
+    margin-top: 40px;
+}
+
+/* Kiểu cho các nút */
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Video nhạc */
+.music-player {
+    margin: 20px 0;
+}
+
+/* Kiểu cho thông báo trong trò chơi và xả stress */
+#gameMessage, #stressMessage {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    color: #28a745;
+}
+/* Hiệu ứng cho câu an ủi khi thay đổi */
+@keyframes fadeInOut {
+    0% { opacity: 0; transform: translateY(-20px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(20px); }
+}
+
+#stressMessage {
+    animation: fadeInOut 3s ease-in-out;
+}
+/* Nút cơ bản */
+.btn {
+    display: inline-block;            /* Biến nút thành inline-block để có thể căn chỉnh như nút */
+    padding: 12px 24px;              /* Khoảng cách bên trong nút */
+    font-size: 16px;                 /* Kích thước chữ */
+    background-color: #007bff;      /* Màu nền */
+    color: white;                   /* Màu chữ */
+    text-decoration: none;           /* Bỏ gạch chân của link */
+    border: none;                   /* Bỏ viền */
+    border-radius: 8px;             /* Bo góc */
+    cursor: pointer;                /* Hiển thị con trỏ chuột dạng tay */
+    transition: all 0.3s ease;      /* Thêm hiệu ứng chuyển động cho tất cả các thuộc tính */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ cho nút */
+  }
+  
+  /* Hiệu ứng khi di chuột qua nút */
+  .btn:hover {
+    background-color: #0056b3;      /* Màu nền khi hover */
+    transform: scale(1.1);           /* Phóng to nút khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bóng đổ đậm hơn khi hover */
+  }
+  
+  /* Hiệu ứng khi nhấn nút */
+  .btn:active {
+    transform: scale(0.95);          /* Thu nhỏ nút khi nhấn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng đổ mờ hơn khi nhấn */
+  }

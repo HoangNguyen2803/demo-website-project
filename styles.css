@@ -1,0 +1,312 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f7fc;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Đảm bảo chiều cao của body luôn đầy đủ */
+  }
+  
+  h1, h2, h3 {
+    font-weight: 500;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1e3a8a;
+    padding: 15px 30px;
+    color: white;
+  }
+  
+  .navbar .logo h1 {
+    font-size: 30px;
+  }
+  
+  .navbar .menu a {
+    color: white;
+    margin: 0 15px;
+    font-size: 16px;
+    transition: color 0.3s;
+  }
+  
+  .navbar .menu a:hover {
+    color: #50b7f5;
+  }
+  
+  .hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Hero Section */
+  .hero {
+    height: 400px;
+    background: linear-gradient(45deg, #1e3a8a, #60a5fa);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-content h2 {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .hero-content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+  
+  .btn {
+    background-color: #50b7f5;
+    padding: 12px 30px;
+    border-radius: 25px;
+    color: white;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .btn:hover {
+    background-color: #1e3a8a;
+  }
+  
+  /* Features Section */
+  .features {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  
+  .feature {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    padding: 30px;
+    width: 30%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature i {
+    font-size: 50px;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+  }
+  
+  .feature h3 {
+    font-size: 24px;
+    color: #1e3a8a;
+    margin-bottom: 10px;
+  }
+  
+  .feature p {
+    font-size: 16px;
+    color: #555;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #1e3a8a;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: auto; /* Đảm bảo footer luôn nằm dưới cùng */
+  }
+  
+  footer i {
+    font-family: 'Font Awesome 5 Free', 'sans-serif';
+    font-weight: 900; /* Đảm bảo kiểu chữ solid */
+    font-size: 30px; /* Điều chỉnh kích thước */
+    margin: 0 10px; /* Khoảng cách giữa các icon */
+    color: white;
+    transition: transform 0.3s ease;
+}
+
+footer i:hover {
+  transform: scale(1.2); /* Phóng to icon khi hover */
+}
+
+  /* Media Queries */
+  @media (max-width: 768px) {
+    .navbar .menu {
+      display: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    .navbar .menu a {
+      display: block;
+      margin: 10px 0;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .features {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .feature {
+      width: 80%;
+      margin-bottom: 30px;
+    }
+  }
+  
+  /* Hamburger icon */
+.hamburger {
+  display: none;
+  font-size: 28px;
+  cursor: pointer;
+}
+
+/* Khi nhấn vào hamburger, chuyển biểu tượng thành dấu X */
+.hamburger.active i {
+  transform: rotate(90deg); /* Xoay ba gạch thành dấu X */
+}
+
+/* Hiệu ứng chuyển động của hamburger */
+.hamburger i {
+  transition: transform 0.3s ease;
+}
+
+/* Menu trên mobile */
+@media (max-width: 768px) {
+  .navbar .menu {
+    display: none;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  /* Hiển thị menu khi nhấn vào hamburger */
+  .navbar .menu.show {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+/* Hamburger icon */
+.hamburger {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  
+  /* Khi nhấn vào hamburger, chuyển biểu tượng thành dấu X */
+  .hamburger.active i {
+    transform: rotate(90deg); /* Xoay ba gạch thành dấu X */
+  }
+  
+  /* Hiệu ứng chuyển động của hamburger */
+  .hamburger i {
+    transition: transform 0.3s ease;
+  }
+  
+  /* Menu trên mobile */
+  @media (max-width: 768px) {
+    .navbar .menu {
+      display: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    /* Hiển thị menu khi nhấn vào hamburger */
+    .navbar .menu.show {
+      display: block;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  }
+  
+  /* Cải tiến hiệu ứng cho các mục trong menu */
+/* Cải tiến hiệu ứng cho các mục trong menu */
+.navbar .menu {
+    display: flex;
+    justify-content: flex-end;  /* Đưa các mục menu sang bên phải */
+    align-items: center;
+    margin-left: 50px;  /* Đảm bảo khoảng cách giữa logo và menu */
+  }
+  
+  .navbar .menu a {
+    color: white;
+    margin: 0 15px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease; /* Thêm hiệu ứng chuyển động cho tất cả các thuộc tính */
+  }
+  
+  .navbar .menu a i {
+    margin-right: 8px; /* Khoảng cách giữa icon và chữ */
+    transition: transform 0.3s ease, color 0.3s ease; /* Thêm hiệu ứng chuyển động cho icon */
+  }
+  
+  /* Hiệu ứng khi di chuột qua mục menu */
+  .navbar .menu a:hover {
+    color: #50b7f5; /* Thay đổi màu chữ */
+  }
+  
+  .navbar .menu a:hover i {
+    transform: scale(1.2); /* Phóng to icon */
+    color: #50b7f5; /* Thay đổi màu của icon khi hover */
+  }
+  
+  /* Hiệu ứng khi menu hiển thị trên thiết bị di động */
+  @media (max-width: 768px) {
+    .navbar .menu {
+      display: none;
+      width: 100%;
+      text-align: center;
+      margin-top: 20px;
+    }
+  
+    /* Hiển thị menu khi nhấn vào hamburger */
+    .navbar .menu.show {
+      display: block;
+    }
+  
+    .hamburger {
+      display: block;
+    }
+  
+    .navbar .menu a {
+      font-size: 18px; /* Tăng kích thước font trên mobile */
+      margin: 20px 0; /* Thêm khoảng cách giữa các mục menu */
+    }
+  }
+  

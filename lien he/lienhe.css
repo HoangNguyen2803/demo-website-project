@@ -1,0 +1,132 @@
+/* Đặt lại một số kiểu mặc định cho trình duyệt */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết kế chung cho body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Căn giữa nội dung */
+.container {
+    text-align: center;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Kiểu cho liên kết */
+a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Kiểu cho thông báo */
+#responseMessage {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: green;
+}
+
+/* Kiểu cho form liên hệ (ẩn ban đầu) */
+.contact-form {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Hiệu ứng cho các trường khi có placeholder */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #888;
+    font-style: italic;
+}
+
+/* Khi người dùng chọn trường, placeholder sẽ có hiệu ứng */
+.contact-form input:focus::placeholder,
+.contact-form textarea:focus::placeholder {
+    color: transparent;  /* Ẩn placeholder khi chọn trường */
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/* Kiểu cho nút gửi */
+.contact-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+/* Nút cơ bản */
+.btn {
+    display: inline-block;            /* Biến nút thành inline-block để có thể căn chỉnh như nút */
+    padding: 12px 24px;              /* Khoảng cách bên trong nút */
+    font-size: 16px;                 /* Kích thước chữ */
+    background-color: #007bff;      /* Màu nền */
+    color: white;                   /* Màu chữ */
+    text-decoration: none;           /* Bỏ gạch chân của link */
+    border: none;                   /* Bỏ viền */
+    border-radius: 8px;             /* Bo góc */
+    cursor: pointer;                /* Hiển thị con trỏ chuột dạng tay */
+    transition: all 0.3s ease;      /* Thêm hiệu ứng chuyển động cho tất cả các thuộc tính */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ cho nút */
+  }
+  
+  /* Hiệu ứng khi di chuột qua nút */
+  .btn:hover {
+    background-color: #0056b3;      /* Màu nền khi hover */
+    transform: scale(1.1);           /* Phóng to nút khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bóng đổ đậm hơn khi hover */
+  }
+  
+  /* Hiệu ứng khi nhấn nút */
+  .btn:active {
+    transform: scale(0.95);          /* Thu nhỏ nút khi nhấn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng đổ mờ hơn khi nhấn */
+  }

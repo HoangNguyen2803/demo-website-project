@@ -1,0 +1,47 @@
+/* Đặt font mặc định cho toàn bộ trang */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1c1c1c; /* Màu nền tối cho giao diện đồng hồ */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column; /* Cho phép các phần tử xếp theo chiều dọc */
+  }
+  
+  /* Định dạng cho đồng hồ kỹ thuật số */
+  #digital-clock {
+    color: #00ff00; /* Màu chữ xanh lá sáng như đồng hồ kỹ thuật số */
+    font-size: 80px; /* Kích thước chữ lớn để dễ đọc */
+    font-weight: bold; /* Đậm chữ */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Thêm bóng đổ cho chữ */
+    padding: 20px;
+    border: 2px solid #00ff00; /* Viền màu xanh lá */
+    border-radius: 10px; /* Bo góc cho viền */
+    background-color: #000; /* Nền đen cho đồng hồ */
+    box-shadow: 0px 0px 20px rgba(0, 255, 0, 0.5); /* Tạo bóng cho đồng hồ */
+    margin-bottom: 20px; /* Khoảng cách giữa đồng hồ và nút */
+  }
+  
+  /* Định dạng cho nút "Về Nhà" */
+  .btn {
+    text-decoration: none; /* Loại bỏ gạch chân của liên kết */
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #00ff00; /* Màu nền xanh lá */
+    color: #000; /* Màu chữ đen */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px; /* Bo góc cho nút */
+    box-shadow: 0px 0px 15px rgba(0, 255, 0, 0.5); /* Bóng đổ cho nút */
+    transition: background-color 0.3s ease; /* Hiệu ứng chuyển màu nền khi hover */
+  }
+  
+  /* Hiệu ứng khi rê chuột lên nút */
+  .btn:hover {
+    background-color: #00cc00; /* Thay đổi màu nền khi hover */
+  }
+  

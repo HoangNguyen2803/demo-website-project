@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xem Tử Vi</title>
+    <link rel="stylesheet" href="/xem tu vi/tuvi.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Xem Tử Vi</h1>
+        <form id="birth-form">
+            <label for="birthdate">Ngày sinh:</label>
+            <input type="date" id="birthdate" name="birthdate" required>
+
+            <label for="birthtime">Giờ sinh (24h):</label>
+            <input type="time" id="birthtime" name="birthtime" required>
+
+            <button type="submit">Xem Tử Vi</button>
+        </form>
+        <div id="result" class="hidden">
+            <p id="zodiac-sign"></p>
+            <p id="element"></p>
+            <p id="house"></p>
+            <p id="stars"></p>
+            <p id="fate"></p>
+            <p id="fortune"></p>
+            <button id="clear" onclick="clearResult()">Thử lại</button>
+        </div>
+    </div>
+
+    <div class="mystic-container">
+        <a href="/index.html" class="btn">Về Nhà</a>
+    </div>
+    
+    <!-- Thêm một phần để hiển thị lời chào tạm biệt -->
+<div id="farewellMessage" style="display: none;">
+    <p>Chào Mừng Trở Lại</p>
+</div>
+
+    <script src="/xem tu vi/tuvi.js"></script>
+</body>
+</html>

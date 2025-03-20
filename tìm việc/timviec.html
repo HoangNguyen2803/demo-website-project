@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f4f6f9; /* Màu nền sáng và nhẹ */
+      color: #333;
+    }
+
+    .navbar {
+      overflow: hidden;
+      background-color: #34495e; /* Màu xanh đậm đẹp mắt */
+      font-family: 'Arial', sans-serif;
+      box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho thanh navbar */
+    }
+
+    .navbar a {
+      float: left;
+      font-size: 16px;
+      color: white;
+      text-align: center;
+      padding: 16px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, color 0.3s ease; /* Thêm hiệu ứng khi hover */
+    }
+
+    .navbar a:hover {
+      background-color: #1abc9c; /* Màu xanh ngọc khi hover */
+      color: white; /* Màu chữ trắng khi hover */
+    }
+
+    .dropdown {
+      float: left;
+      overflow: hidden;
+    }
+
+    .dropdown .dropbtn {
+      font-size: 16px;
+      border: none;
+      outline: none;
+      color: white;
+      padding: 16px 20px;
+      background-color: inherit;
+      font: inherit;
+      margin: 0;
+      transition: background-color 0.3s ease; /* Thêm hiệu ứng cho nút dropdown */
+    }
+
+    .dropdown:hover .dropbtn {
+      background-color: #1abc9c; /* Màu xanh ngọc khi hover vào dropdown */
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ecf0f1; /* Màu nền sáng cho menu con */
+      min-width: 200px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+      border-radius: 4px; /* Bo tròn góc menu con */
+      opacity: 0; /* Ẩn menu con khi chưa hover */
+      transition: opacity 0.3s ease-in-out; /* Thêm hiệu ứng mượt mà khi hiển thị */
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+      opacity: 1; /* Hiển thị menu con */
+    }
+
+    .dropdown-content a {
+      color: #34495e; /* Màu chữ tối cho các mục menu con */
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease, color 0.3s ease; /* Thêm hiệu ứng cho các mục menu con */
+    }
+
+    .dropdown-content a:hover {
+      background-color: #1abc9c; /* Màu nền xanh ngọc khi hover vào mục trong menu con */
+      color: white; /* Màu chữ trắng khi hover */
+    }
+
+    .dropdown-content .header {
+      background-color: #1abc9c; /* Màu nền cho header của menu con */
+      color: white;
+      padding: 16px;
+      font-size: 18px;
+      border-radius: 4px 4px 0 0; /* Bo tròn góc trên của header */
+    }
+
+    /* Content styling */
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      color: #34495e;
+      font-size: 28px;
+    }
+
+    .job-listing {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .job-card {
+      background-color: white;
+      margin: 10px;
+      padding: 15px;
+      width: 30%;
+      border-radius: 8px; /* Bo tròn góc thẻ công việc */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ cho thẻ công việc */
+      transition: transform 0.3s ease; /* Thêm hiệu ứng khi hover */
+    }
+
+    .job-card:hover {
+      transform: translateY(-5px); /* Nâng thẻ lên khi hover */
+    }
+
+    .job-card h2 {
+      color: #16a085; /* Màu xanh ngọc cho tiêu đề công việc */
+    }
+
+    .job-card p {
+      color: #777;
+    }
+
+    .job-card a {
+      color: #2980b9;
+      text-decoration: none;
+    }
+
+    .job-card a:hover {
+      text-decoration: underline;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    .form-container input, .form-container textarea {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .form-container button {
+      background-color: #2ecc71;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .form-container button:hover {
+      background-color: #27ae60;
+    }
+
+    /* Responsive layout */
+    @media screen and (max-width: 768px) {
+      .job-card {
+        width: 100%;
+      }
+    }
+
+        /* Footer Styling */
+        footer {
+      background-color: #34495e; /* Màu xanh đậm */
+      color: white;
+      text-align: center;
+      padding: 20px;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      left: 0;
+      box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 14px;
+    }
+
+    footer a {
+      color: #1abc9c;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="/index.html">Trang chủ</a>
+    <a href="#find-job">Tìm việc</a>
+    <a href="#post-job">Đăng việc</a>
+    <div class="dropdown">
+      <button class="dropbtn">Thêm 
+        <i class="fa fa-caret-down"></i>
+      </button>
+      <div class="dropdown-content">
+        <div class="header">
+          <h2>Tìm Nhanh Chóng</h2>
+        </div>   
+        <a href="#">Công nghệ thông tin</a>
+        <a href="#">Marketing</a>
+        <a href="#">Tài chính</a>
+        <a href="#">Hà Nội</a>
+        <a href="#">TP Hồ Chí Minh</a>
+        <a href="#">Đà Nẵng</a>
+        <a href="#">Công ty A</a>
+        <a href="#">Công ty B</a>
+        <a href="#">Công ty C</a>
+      </div>
+    </div> 
+  </div>
+
+  <!-- Home Page Section -->
+  <div class="container" id="home">
+    <h1>Chào mừng đến với Tìm Việc</h1>
+    <p>Cơ hội nghề nghiệp chỉ bằng một cú click!</p>
+  </div>
+
+  <!-- Find Job Section -->
+  <div class="container" id="find-job">
+    <h1>Danh sách việc làm</h1>
+    <div class="job-listing">
+      <div class="job-card">
+        <h2>Lập trình viên phần mềm</h2>
+        <p>Công ty: XYZ Ltd</p>
+        <p>Vị trí: Hà Nội</p>
+        <a href="#">Xem chi tiết công việc</a>
+      </div>
+      <div class="job-card">
+        <h2>Quản lý marketing</h2>
+        <p>Công ty: ABC Corp</p>
+        <p>Vị trí: TP Hồ Chí Minh</p>
+        <a href="#">Xem chi tiết công việc</a>
+      </div>
+      <div class="job-card">
+        <h2>Chuyên viên tài chính</h2>
+        <p>Công ty: DEF Finance</p>
+        <p>Vị trí: Đà Nẵng</p>
+        <a href="#">Xem chi tiết công việc</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Post Job Section -->
+  <div class="container" id="post-job">
+    <h1>Đăng công việc</h1>
+    <div class="form-container">
+      <form action="#">
+        <input type="text" name="job-title" placeholder="Tên công việc" required>
+        <input type="text" name="company-name" placeholder="Tên công ty" required>
+        <input type="text" name="location" placeholder="Vị trí" required>
+        <textarea name="job-description" rows="5" placeholder="Mô tả công việc" required></textarea>
+        <button type="submit">Đăng công việc</button>
+      </form>
+    </div>
+  </div>
+  <br><br><br><br>
+
+  <footer>
+    <p>&copy; 2025 - Tìm Việc. Tất cả quyền được bảo vệ.</p>
+    <p>Được phát triển bởi <a href="/index.html">HoangNguyen</a></p>
+  </footer>
+
+</body>
+</html>

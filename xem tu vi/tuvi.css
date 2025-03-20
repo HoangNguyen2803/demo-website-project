@@ -1,0 +1,177 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input {
+    padding: 10px;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 250px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#result {
+    margin-top: 20px;
+    opacity: 0;
+    transition: opacity 1s ease, transform 0.5s ease;
+    transform: scale(0.9);
+}
+
+#result.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+#result p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+#clear {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f44336;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#clear:hover {
+    background-color: #e53935;
+}
+
+/* Đảm bảo hiệu ứng chỉ áp dụng cho div có class mystic-container */
+.mystic-container {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.8); /* Nền mờ */
+}
+
+/* Tạo hiệu ứng cho nút */
+.mystic-container .btn {
+    position: relative;
+    display: inline-block;
+    color: white;
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    background: linear-gradient(45deg, #ff006e, #8e2de2); /* Nền gradient */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s ease-in-out;
+    overflow: hidden;
+}
+
+/* Hiệu ứng ánh sáng huyền bí khi hover */
+.mystic-container .btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 0.5s ease-in-out;
+    opacity: 0;
+}
+
+/* Khi hover vào nút */
+.mystic-container .btn:hover {
+    color: #fff;
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8); /* Ánh sáng nổi bật */
+}
+
+/* Khi hover vào nút, thêm hiệu ứng mờ sáng */
+.mystic-container .btn:hover::before {
+    opacity: 1;
+    width: 500%;
+    height: 500%;
+    background: rgba(255, 255, 255, 0.4); /* Tạo hiệu ứng sáng */
+}
+
+/* Tạo hiệu ứng cho nền div khi hover */
+.mystic-container:hover {
+    background: rgba(0, 0, 0, 0.9); /* Làm nền đậm hơn khi hover */
+}
+
+/* Chỉnh sửa cho thông báo chào tạm biệt */
+#farewellMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    display: none; /* Mặc định không hiển thị */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    animation: fadeIn 1s ease-out;
+}
+
+/* Hiệu ứng fade-in cho thông báo */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

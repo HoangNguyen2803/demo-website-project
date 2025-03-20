@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+}
+
+#main {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    margin-top: 20px;
+}
+
+.cell {
+    width: 100px;
+    height: 100px;
+    border: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.cell.taken {
+    pointer-events: none;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.reset {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: whitesmoke;
+    border: 1px solid dodgerblue;
+    color: dodgerblue;
+    border-radius: 8px;
+}
+
+/* Nút cơ bản */
+.btn {
+    display: inline-block;            /* Biến nút thành inline-block để có thể căn chỉnh như nút */
+    padding: 12px 24px;              /* Khoảng cách bên trong nút */
+    font-size: 16px;                 /* Kích thước chữ */
+    background-color: #007bff;      /* Màu nền */
+    color: white;                   /* Màu chữ */
+    text-decoration: none;           /* Bỏ gạch chân của link */
+    border: none;                   /* Bỏ viền */
+    border-radius: 8px;             /* Bo góc */
+    cursor: pointer;                /* Hiển thị con trỏ chuột dạng tay */
+    transition: all 0.3s ease;      /* Thêm hiệu ứng chuyển động cho tất cả các thuộc tính */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ cho nút */
+  }
+  
+  /* Hiệu ứng khi di chuột qua nút */
+  .btn:hover {
+    background-color: #0056b3;      /* Màu nền khi hover */
+    transform: scale(1.1);           /* Phóng to nút khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bóng đổ đậm hơn khi hover */
+  }
+  
+  /* Hiệu ứng khi nhấn nút */
+  .btn:active {
+    transform: scale(0.95);          /* Thu nhỏ nút khi nhấn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng đổ mờ hơn khi nhấn */
+  }
+  

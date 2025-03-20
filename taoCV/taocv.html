@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tạo CV</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #0056b3;
+    }
+
+    header p {
+      font-size: 1.2em;
+      color: #777;
+    }
+
+    .form-section {
+      margin-bottom: 20px;
+    }
+
+    .form-section h3 {
+      margin-bottom: 10px;
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .btn-container {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #0056b3;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1.1em;
+      margin: 10px;
+    }
+
+    button:hover {
+      background-color: #004085;
+    }
+
+    .preview {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      display: none;
+    }
+
+    .preview h2 {
+      color: #0056b3;
+      font-size: 2em;
+    }
+
+    .preview p {
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .profile-image {
+      max-width: 150px;
+      margin-bottom: 20px;
+      border-radius: 50%;
+      border: 2px solid #0056b3;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #777;
+      margin-top: 40px;
+    }
+
+    .help-text {
+      margin-top: 20px;
+      font-size: 1.1em;
+      color: #555;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Tạo CV Online</h1>
+      <p>Nhập thông tin và tải CV của bạn xuống dưới dạng PDF</p>
+    </header>
+
+    <div class="form-section">
+      <h3>Hướng Dẫn</h3>
+      <p class="help-text">
+        1. Điền thông tin cá nhân vào các trường bên dưới.<br>
+        2. Thêm ảnh đại diện nếu muốn.<br>
+        3. Nhấn "Tạo CV" để xem bản mẫu.<br>
+        4. Nhấn "Tải CV" để tải bản CV dưới dạng PDF.
+      </p>
+    </div>
+
+    <div class="form-section">
+      <h3>Thông Tin Cá Nhân</h3>
+      <input type="text" id="name" placeholder="Họ và tên">
+      <input type="email" id="email" placeholder="Email">
+      <input type="text" id="phone" placeholder="Số điện thoại">
+      <textarea id="address" placeholder="Địa chỉ"></textarea>
+    </div>
+
+    <div class="form-section">
+      <h3>Mục Tiêu Nghề Nghiệp</h3>
+      <textarea id="careerGoal" placeholder="Mục tiêu nghề nghiệp của bạn"></textarea>
+    </div>
+
+    <div class="form-section">
+      <h3>Kinh Nghiệm Làm Việc</h3>
+      <input type="text" id="jobTitle" placeholder="Chức danh công việc">
+      <textarea id="jobDescription" placeholder="Mô tả công việc"></textarea>
+    </div>
+
+    <div class="form-section">
+      <h3>Học Vấn</h3>
+      <input type="text" id="educationDegree" placeholder="Bằng cấp">
+      <textarea id="educationDetails" placeholder="Chi tiết học vấn"></textarea>
+    </div>
+
+    <div class="form-section">
+      <h3>Kỹ Năng</h3>
+      <input type="text" id="skills" placeholder="Kỹ năng (cách nhau bằng dấu phẩy)">
+    </div>
+
+    <div class="form-section">
+      <h3>Ảnh Đại Diện</h3>
+      <input type="file" id="profileImage" accept="image/*" onchange="previewImage()">
+      <img id="imagePreview" class="profile-image" src="" alt="Ảnh đại diện" />
+    </div>
+
+    <div class="btn-container">
+      <button onclick="generateCV()">Tạo CV</button>
+      <button onclick="downloadCV()">Tải CV</button>
+    </div>
+
+    <div class="preview" id="cvPreview">
+      <h2>CV của <span id="previewName"></span></h2>
+      <img id="previewImage" class="profile-image" src="" alt="Ảnh đại diện" />
+      <p><strong>Email:</strong> <span id="previewEmail"></span></p>
+      <p><strong>Số điện thoại:</strong> <span id="previewPhone"></span></p>
+      <p><strong>Địa chỉ:</strong> <span id="previewAddress"></span></p>
+      <p><strong>Mục tiêu nghề nghiệp:</strong> <span id="previewCareerGoal"></span></p>
+      <p><strong>Kinh nghiệm làm việc:</strong> <span id="previewJob"></span></p>
+      <p><strong>Học vấn:</strong> <span id="previewEducation"></span></p>
+      <p><strong>Kỹ năng:</strong> <span id="previewSkills"></span></p>
+    </div>
+    <br><br>
+<div>
+    <h1 style="font-size: 20px;"><p>BẠN MUỐN OUT?</p></h1>
+    <br>
+    <button><a href="/index.html" style="color: white;"><p>Home</p></a></button>
+</div>
+    <footer>
+      <p>&copy; 2025 Tạo CV Online</p>
+    </footer>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script>
+    let cvData = {};
+
+    function previewImage() {
+      const fileInput = document.getElementById('profileImage');
+      const file = fileInput.files[0];
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const image = document.getElementById('imagePreview');
+        image.src = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function generateCV() {
+      // Lấy dữ liệu từ các trường input
+      cvData.name = document.getElementById('name').value;
+      cvData.email = document.getElementById('email').value;
+      cvData.phone = document.getElementById('phone').value;
+      cvData.address = document.getElementById('address').value;
+      cvData.careerGoal = document.getElementById('careerGoal').value;
+      cvData.jobTitle = document.getElementById('jobTitle').value;
+      cvData.jobDescription = document.getElementById('jobDescription').value;
+      cvData.educationDegree = document.getElementById('educationDegree').value;
+      cvData.educationDetails = document.getElementById('educationDetails').value;
+      cvData.skills = document.getElementById('skills').value.split(',');
+
+      // Cập nhật bản mẫu
+      document.getElementById('previewName').innerText = cvData.name;
+      document.getElementById('previewEmail').innerText = cvData.email;
+      document.getElementById('previewPhone').innerText = cvData.phone;
+      document.getElementById('previewAddress').innerText = cvData.address;
+      document.getElementById('previewCareerGoal').innerText = cvData.careerGoal;
+      document.getElementById('previewJob').innerText = cvData.jobTitle + " - " + cvData.jobDescription;
+      document.getElementById('previewEducation').innerText = cvData.educationDegree + " - " + cvData.educationDetails;
+      document.getElementById('previewSkills').innerText = cvData.skills.join(', ');
+
+      // Hiển thị bản mẫu
+      document.getElementById('cvPreview').style.display = 'block';
+    }
+
+    function downloadCV() {
+      if (!cvData.name) {
+        alert("Vui lòng tạo CV trước!");
+        return;
+      }
+
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.setFontSize(16);
+
+      doc.text("CV của " + cvData.name, 20, 20);
+      doc.text("Email: " + cvData.email, 20, 30);
+      doc.text("Số điện thoại: " + cvData.phone, 20, 40);
+      doc.text("Địa chỉ: " + cvData.address, 20, 50);
+      doc.text("Mục tiêu nghề nghiệp: " + cvData.careerGoal, 20, 60);
+      doc.text("Kinh nghiệm làm việc: " + cvData.jobTitle + "\n" + cvData.jobDescription, 20, 80);
+      doc.text("Học vấn: " + cvData.educationDegree + "\n" + cvData.educationDetails, 20, 100);
+      const skillsText = "Kỹ năng: " + cvData.skills.join(', ');
+      doc.text(skillsText, 20, 120);
+
+      doc.save("CV_" + cvData.name + ".pdf");
+    }
+
+    function downloadCV() {
+  if (!cvData.name) {
+    alert("Vui lòng tạo CV trước!");
+    return;
+  }
+
+  // Hiển thị hộp thoại xác nhận
+  const confirmDownload = confirm("Bạn chắc chắn muốn tải CV?");
+
+  // Nếu người dùng đồng ý tải
+  if (confirmDownload) {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    doc.setFontSize(16);
+
+    doc.text("CV của " + cvData.name, 20, 20);
+    doc.text("Email: " + cvData.email, 20, 30);
+    doc.text("Số điện thoại: " + cvData.phone, 20, 40);
+    doc.text("Địa chỉ: " + cvData.address, 20, 50);
+    doc.text("Mục tiêu nghề nghiệp: " + cvData.careerGoal, 20, 60);
+    doc.text("Kinh nghiệm làm việc: " + cvData.jobTitle + "\n" + cvData.jobDescription, 20, 80);
+    doc.text("Học vấn: " + cvData.educationDegree + "\n" + cvData.educationDetails, 20, 100);
+    const skillsText = "Kỹ năng: " + cvData.skills.join(', ');
+    doc.text(skillsText, 20, 120);
+
+    doc.save("CV_" + cvData.name + ".pdf");
+  } else {
+    // Nếu người dùng không đồng ý, không làm gì cả
+    alert("Quay lại mà không tải CV.");
+  }
+}
+
+  </script>
+</body>
+</html>

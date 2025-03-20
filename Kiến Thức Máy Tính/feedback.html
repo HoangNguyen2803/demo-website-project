@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phản Hồi</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+
+        input, textarea {
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Phản Hồi</h1>
+</header>
+
+<div class="container">
+    <h2>Gửi Phản Hồi của Bạn</h2>
+    <form id="feedback-form">
+        <label for="name">Tên của bạn:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email của bạn:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Phản hồi của bạn:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Gửi Phản Hồi</button>
+    </form>
+</div>
+<br>
+<p style="color: rgb(255, 0, 0);"><a href="/Kiến Thức Máy Tính/maytinh.html">Trở Về</a></p>
+<br><br><br
+<footer>
+    <p>&copy; 2025 Kiến Thức Về Máy Tính</p>
+</footer>
+
+<script>
+    document.getElementById('feedback-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+        
+        if (name && email && message) {
+            alert('Cảm ơn bạn đã gửi phản hồi!');
+            document.getElementById('feedback-form').reset();
+        } else {
+            alert('Vui lòng điền đầy đủ thông tin.');
+        }
+    });
+</script>
+
+</body>
+</html>

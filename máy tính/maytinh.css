@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+
+.calculator {
+
+padding: 10px;
+
+border-radius: 1em;
+
+height: 380px;
+
+width: 400px;
+
+margin: auto;
+
+background-color: #191b28;
+
+box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+
+}
+
+.display-box {
+
+font-family: 'Orbitron', sans-serif;
+
+background-color: #dcdbe1;
+
+border: solid black 0.5px;
+
+color: black;
+
+border-radius: 5px;
+
+width: 100%;
+
+height: 65%;
+
+}
+
+.button {
+
+font-family: 'Orbitron', sans-serif;
+
+background-color: #64278f;
+
+color: white;
+
+border: solid black 0.5px;
+
+width: 100%;
+
+border-radius: 5px;
+
+height: 70%;
+
+outline: none;
+
+}
+
+.button:active {
+
+background: #e5e5e5;
+
+-webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
+
+-moz-box-shadow: inset 0px 0px 5px #c1c1c1;
+
+box-shadow: inset 0px 0px 5px #c1c1c1;
+
+}
+.btn {
+    display: inline-block;            /* Biến nút thành inline-block để có thể căn chỉnh như nút */
+    padding: 12px 24px;              /* Khoảng cách bên trong nút */
+    font-size: 16px;                 /* Kích thước chữ */
+    background-color: #007bff;      /* Màu nền */
+    color: white;                   /* Màu chữ */
+    text-decoration: none;           /* Bỏ gạch chân của link */
+    border: none;                   /* Bỏ viền */
+    border-radius: 8px;             /* Bo góc */
+    cursor: pointer;                /* Hiển thị con trỏ chuột dạng tay */
+    transition: all 0.3s ease;      /* Thêm hiệu ứng chuyển động cho tất cả các thuộc tính */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Thêm bóng đổ cho nút */
+  }
+  
+  /* Hiệu ứng khi di chuột qua nút */
+  .btn:hover {
+    background-color: #0056b3;      /* Màu nền khi hover */
+    transform: scale(1.1);           /* Phóng to nút khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Bóng đổ đậm hơn khi hover */
+  }
+  
+  /* Hiệu ứng khi nhấn nút */
+  .btn:active {
+    transform: scale(0.95);          /* Thu nhỏ nút khi nhấn */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng đổ mờ hơn khi nhấn */
+  }
+  

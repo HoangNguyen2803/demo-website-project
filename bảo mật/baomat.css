@@ -1,0 +1,124 @@
+/* Đặt lại các kiểu mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Kiểu chung cho body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+/* Tiêu đề chính */
+header {
+    text-align: center;
+    background-color: #007bff;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+}
+
+header p {
+    font-size: 1.2rem;
+}
+
+/* Nội dung chính */
+.content {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Các section */
+.section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.section h2 {
+    font-size: 1.8rem;
+    color: #007bff;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.section h2 i {
+    margin-right: 10px;
+}
+
+.section ul {
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+.section ul li {
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.section ul li i {
+    margin-right: 10px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    color: #777;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Nút Home */
+.home-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    font-size: 2rem;
+    border-radius: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    opacity: 0; /* Ban đầu ẩn */
+    pointer-events: none; /* Không thể nhấp khi ẩn */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.home-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+.home-btn.show {
+    opacity: 1;
+    pointer-events: all; /* Khi hiển thị, có thể nhấp */
+}
+
+/* Hiệu ứng hover cho các phần tử */
+.section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s ease;
+}

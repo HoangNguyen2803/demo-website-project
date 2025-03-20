@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kiến Thức Về Máy Tính</title>
+    <style>
+     /* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f4f4;
+    margin-bottom: 50px;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    transition: background-color 0.3s ease;
+}
+
+header .logo h1 {
+    text-align: center;
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+/* Navbar styling */
+nav {
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    background-color: #444;
+    transition: background-color 0.3s ease;
+    margin-bottom: 0;
+}
+
+/* Navbar items */
+nav ul li {
+    position: relative;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347; /* Màu chữ khi hover */
+    transform: scale(1.1); /* Hiệu ứng phóng to */
+}
+
+/* Submenu (Dropdown) */
+nav ul li .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    list-style-type: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s linear 0.3s;
+}
+
+/* Hiển thị submenu khi hover */
+nav ul li:hover .submenu {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease;
+}
+
+/* Các item trong submenu */
+nav ul li .submenu li {
+    padding: 8px 15px;
+}
+
+nav ul li .submenu li a {
+    padding: 8px 15px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li .submenu li a:hover {
+    background-color: #666;
+    color: #ff6347;
+}
+
+/* Main content */
+main {
+    padding: 20px;
+    text-align: left;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Section */
+section {
+    margin-bottom: 40px;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    font-size: 1rem;
+    width: 100%;
+}
+
+/* Animation effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive: Các kiểu cho màn hình nhỏ */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column; /* Menu chuyển thành dọc trên di động */
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+        text-align: center;
+    }
+
+    nav ul li a {
+        font-size: 1rem;
+        padding: 12px 20px;
+    }
+
+    /* Hiển thị submenu khi hover trên các thiết bị di động */
+    nav ul li .submenu {
+        position: static;
+        display: none; /* Ẩn submenu */
+    }
+
+    nav ul li:hover .submenu {
+        display: block;
+    }
+
+    /* Thay đổi padding và font-size cho nút và footer trên màn hình nhỏ */
+    main {
+        padding: 15px;
+    }
+
+    footer {
+        padding: 20px 0;
+        font-size: 0.9rem;
+    }
+}
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <h1>Kiến Thức Về Máy Tính</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="/index.html">Trang Chủ</a></li>
+                <li><a href="#hardware">Phần Cứng</a></li>
+                <li><a href="#software">Phần Mềm</a></li>
+                <li><a href="#build-computer">Lắp Ráp Máy Tính</a></li>
+                <li><a href="#upcoming-features">Tính Năng Sắp Ra Mắt</a></li>
+                <li><a href="#smart-search">Tìm Kiếm Thông Minh</a></li>
+                <li><a href="#settings">Cài Đặt</a>
+                    <ul class="submenu">
+                        <li><a href="/Kiến Thức Máy Tính/feedback.html">Phản Hồi</a></li>
+                        <li><a href="/Kiến Thức Máy Tính/report-error.html">Báo Cáo Lỗi</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Phần Cứng -->
+        <section id="hardware">
+            <h2>Phần Cứng Máy Tính</h2>
+            <p>Phần cứng máy tính là những bộ phận vật lý cấu thành nên một hệ thống máy tính. Các bộ phận quan trọng bao gồm:</p>
+            <ul>
+                <li><strong>CPU (Bộ xử lý trung tâm)</strong>: Đây là bộ não của máy tính, xử lý các lệnh và điều khiển hoạt động của máy tính.</li>
+                <li><strong>RAM (Bộ nhớ tạm thời)</strong>: Là bộ nhớ dùng để lưu trữ các dữ liệu và chương trình mà máy tính đang sử dụng.</li>
+                <li><strong>Card đồ họa (GPU)</strong>: Xử lý các tác vụ đồ họa và hình ảnh, đặc biệt là trong game hoặc phần mềm thiết kế đồ họa.</li>
+                <li><strong>Ổ cứng (HDD/SSD)</strong>: Là nơi lưu trữ dữ liệu lâu dài của máy tính. SSD có tốc độ đọc ghi nhanh hơn so với HDD.</li>
+                <li><strong>Bo mạch chủ (Motherboard)</strong>: Kết nối tất cả các thành phần phần cứng lại với nhau và cho phép chúng giao tiếp với nhau.</li>
+            </ul>
+        </section>
+
+        <!-- Phần Mềm -->
+        <section id="software">
+            <h2>Phần Mềm Máy Tính</h2>
+            <p>Phần mềm máy tính là những ứng dụng, chương trình được cài đặt để máy tính có thể thực hiện các tác vụ cụ thể. Các loại phần mềm phổ biến bao gồm:</p>
+            <ul>
+                <li><strong>Hệ điều hành (Windows, macOS, Linux)</strong>: Điều khiển phần cứng và cung cấp môi trường cho phần mềm ứng dụng hoạt động.</li>
+                <li><strong>Phần mềm văn phòng (Microsoft Office, Google Docs)</strong>: Giúp người dùng thực hiện các công việc như soạn thảo văn bản, tính toán, và quản lý dữ liệu.</li>
+                <li><strong>Trình duyệt web (Chrome, Firefox, Safari)</strong>: Được sử dụng để duyệt web và truy cập các dịch vụ trực tuyến.</li>
+                <li><strong>Phần mềm đồ họa (Photoshop, Illustrator)</strong>: Dùng để thiết kế đồ họa, chỉnh sửa ảnh, video.</li>
+            </ul>
+        </section>
+
+        <!-- Lắp Ráp Máy Tính -->
+        <section id="build-computer">
+            <h2>Lắp Ráp Máy Tính</h2>
+            <p>Lắp ráp máy tính không phải là quá phức tạp, nhưng đòi hỏi sự cẩn thận. Các bước cơ bản bao gồm:</p>
+            <ol>
+                <li>Chuẩn bị đầy đủ linh kiện: bo mạch chủ, CPU, RAM, card đồ họa, ổ cứng, nguồn điện, và case.</li>
+                <li>Lắp bo mạch chủ vào trong case và cố định.</li>
+                <li>Lắp đặt CPU, RAM, card đồ họa, ổ cứng vào đúng vị trí trên bo mạch chủ.</li>
+                <li>Kết nối tất cả các dây điện và cáp nguồn.</li>
+                <li>Kiểm tra lại các kết nối và bật máy để kiểm tra hoạt động.</li>
+            </ol>
+        </section>
+
+        <!-- Tính Năng Sắp Ra Mắt -->
+        <section id="upcoming-features">
+            <h2>Tính Năng Sắp Ra Mắt</h2>
+            <p>Với sự phát triển của công nghệ, nhiều tính năng mới sẽ được tích hợp vào các hệ thống máy tính trong tương lai:</p>
+            <ul>
+                <li><strong>Trí tuệ nhân tạo (AI)</strong>: AI sẽ ngày càng được áp dụng trong nhiều lĩnh vực như tối ưu hóa hiệu suất máy tính và tự động hóa các tác vụ.</li>
+                <li><strong>5G và kết nối không dây</strong>: Tốc độ internet cao hơn và giảm độ trễ sẽ giúp cải thiện trải nghiệm sử dụng máy tính và các thiết bị di động.</li>
+            </ul>
+        </section>
+
+        <!-- Tìm Kiếm Thông Minh -->
+        <section id="smart-search">
+            <h2>Tìm Kiếm Thông Minh</h2>
+            <p>Tính năng tìm kiếm thông minh sử dụng các thuật toán học máy để cung cấp kết quả tìm kiếm chính xác hơn và nhanh chóng hơn, giúp bạn tìm thấy thông tin nhanh hơn trên trang web.</p>
+        </section>
+
+        <!-- Cài Đặt -->
+        <section id="settings">
+            <h2>Cài Đặt</h2>
+            <p>Trong mục Cài Đặt, bạn có thể:</p>
+            <ul>
+                <li><strong>Phản hồi</strong>: Gửi ý kiến và nhận xét để chúng tôi cải thiện trang web.</li>
+                <li><strong>Báo cáo lỗi</strong>: Nếu bạn gặp sự cố, vui lòng báo cáo cho chúng tôi để khắc phục.</li>
+            </ul>
+        </section>
+
+    </main>
+<br>
+    <footer>
+        <p>&copy; 2025 Kiến Thức Về Máy Tính. Tất cả các quyền được bảo vệ.</p>
+    </footer>
+
+    <script>
+        // JavaScript for submenu hover
+        document.querySelectorAll("nav ul li").forEach(item => {
+            item.addEventListener("mouseover", function() {
+                if (this.querySelector(".submenu")) {
+                    this.querySelector(".submenu").style.display = "block";
+                    this.querySelector(".submenu").style.opacity = 1;
+                    this.querySelector(".submenu").style.visibility = "visible";
+                }
+            });
+
+            item.addEventListener("mouseout", function() {
+                if (this.querySelector(".submenu")) {
+                    this.querySelector(".submenu").style.display = "none";
+                    this.querySelector(".submenu").style.opacity = 0;
+                    this.querySelector(".submenu").style.visibility = "hidden";
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
